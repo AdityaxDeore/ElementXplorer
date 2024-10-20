@@ -1,0 +1,172 @@
+/* Global styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Table styles */
+.table {
+  display: grid;
+  grid-template-columns: repeat(18, 50px);
+  gap: 5px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Element styles */
+.element {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.element span {
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.element span:first-child {
+  font-size: 18px;
+  margin-bottom: 2px;
+}
+
+.element.red {
+  background-color: #ff9999;
+  border-color: #ff6666;
+}
+
+.element.yellow {
+  background-color: #ffff99;
+  border-color: #ffff66;
+}
+
+.element.blue {
+  background-color: #9999ff;
+  border-color: #6666ff;
+}
+
+.element.green {
+  background-color: #99ff99;
+  border-color: #66ff66;
+}
+
+.element.empty {
+  border: none;
+  background-color: transparent;
+  cursor: default;
+}
+
+/* Hover effects */
+.element:not(.empty):hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.element:not(.empty):hover span {
+  color: #333;
+}
+
+/* Accessibility styles */
+.element:focus {
+  outline: 2px solid #0066cc;
+  outline-offset: 2px;
+}
+
+.element:active {
+  transform: scale(0.95);
+}
+
+/* Info box styles */
+.info-box {
+  position: fixed;
+  background-color: white;
+  border: 1px solid black;
+  padding: 15px;
+  max-width: 300px;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.close-btn {
+  display: block;
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  /* Could be more or less, depending on screen size */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}

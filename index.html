@@ -1,0 +1,276 @@
+<html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
+    <script src="style.css"></script
+    <title></title>
+
+    <title>Periodic Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #3fe5cfe2;
+            color: #000000;
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+    
+        .table {
+            display: grid;
+            grid-template-columns: repeat(18, 50px);
+            grid-gap: 5px;
+        }
+    
+        .element {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            border: 1px solid #000;
+            text-align: center;
+            font-size: 14px;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+    
+        .element:hover {
+            transform: scale(1.2);
+            z-index: 1;
+        }
+    
+        .element.red {
+            background-color: #ff9999;
+        }
+    
+        .element.yellow {
+            background-color: #ffff99;
+        }
+    
+        .element.blue {
+            background-color: #9999ff;
+        }
+    
+        .element.green {
+            background-color: #99ff99;
+        }
+    
+        .element.empty {
+            border: none;
+        }
+    
+        .lanthanides,
+        .actinides {
+            display: grid;
+            grid-template-columns: repeat(18, 50px);
+            grid-gap: 5px;
+            margin-top: 10px;
+        }
+    
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body style="--darkreader-inline-outline: #1234a4; --darkreader-inline-bgcolor: #2d3133;"
+    data-darkreader-inline-outline="" data-darkreader-inline-bgcolor="">
+    <div class="container">
+        <div class="modal" id="elementModal" style="display: none;">
+            <div class="modal-content">
+                <span class="close" id="closeModal">&times;</span>
+                <p id="elementInfo"></p>
+            </div>
+        </div>
+        <div class="title" style="--darkreader-inline-outline: #1234a4; --darkreader-inline-bgcolor: #2d3133;"
+            data-darkreader-inline-outline="" data-darkreader-inline-bgcolor="">ElementXplorer</div>
+            <div class="subtitle">~By Aditya Deore 124B1f116</div>
+        <div class="table">
+            <div class="element red">1<br>H</div>
+            <div class="element empty"></div>
+            <div class="element empty"></div>
+            <div class="element empty"></div>
+            <div class="element empty"></div>
+            <div class="element empty"></div>
+            <div class="element empty"></div>
+            <div class="element empty"></div>
+            <div class="element empty"></div>
+            <div class="element empty"></div>
+            <div class="element empty"></div>
+            <div class="element empty"></div>
+            <div class="element empty"></div>
+            <div class="element empty"></div>
+            <div class="element empty"></div>
+            <div class="element empty"></div>
+            <div class="element empty"></div>
+            <div class="element red">2<br>He</div>
+
+            <div class="element red">3<br>Li</div>
+            <div class="element red">4<br>Be</div>
+            <div class="element empty"></div>
+            <div class="element empty"></div>
+            <div class="element empty"></div>
+            <div class="element empty"></div>
+            <div class="element empty"></div>
+            <div class="element empty"></div>
+            <div class="element empty"></div>
+            <div class="element empty"></div>
+            <div class="element empty"></div>
+            <div class="element empty"></div>
+            <div class="element yellow">5<br>B</div>
+            <div class="element yellow">6<br>C</div>
+            <div class="element yellow">7<br>N</div>
+            <div class="element yellow">8<br>O</div>
+            <div class="element yellow">9<br>F</div>
+            <div class="element yellow">10<br>Ne</div>
+
+            <div class="element red">11<br>Na</div>
+            <div class="element red">12<br>Mg</div>
+            <div class="element empty"></div>
+            <div class="element empty"></div>
+            <div class="element empty"></div>
+            <div class="element empty"></div>
+            <div class="element empty"></div>
+            <div class="element empty"></div>
+            <div class="element empty"></div>
+            <div class="element empty"></div>
+            <div class="element empty"></div>
+            <div class="element empty"></div>
+            <div class="element yellow">13<br>Al</div>
+            <div class="element yellow">14<br>Si</div>
+            <div class="element yellow">15<br>P</div>
+            <div class="element yellow">16<br>S</div>
+            <div class="element yellow">17<br>Cl</div>
+            <div class="element yellow">18<br>Ar</div>
+
+            <div class="element red">19<br>K</div>
+            <div class="element red">20<br>Ca</div>
+            <div class="element blue">21<br>Sc</div>
+            <div class="element blue">22<br>Ti</div>
+            <div class="element blue">23<br>V</div>
+            <div class="element blue">24<br>Cr</div>
+            <div class="element blue">25<br>Mn</div>
+            <div class="element blue">26<br>Fe</div>
+            <div class="element blue">27<br>Co</div>
+            <div class="element blue">28<br>Ni</div>
+            <div class="element blue">29<br>Cu</div>
+            <div class="element blue">30<br>Zn</div>
+            <div class="element yellow">31<br>Ga</div>
+            <div class="element yellow">32<br>Ge</div>
+            <div class="element yellow">33<br>As</div>
+            <div class="element yellow">34<br>Se</div>
+            <div class="element yellow">35<br>Br</div>
+            <div class="element yellow">36<br>Kr</div>
+
+            <div class="element red">37<br>Rb</div>
+            <div class="element red">38<br>Sr</div>
+            <div class="element blue">39<br>Y</div>
+            <div class="element blue">40<br>Zr</div>
+            <div class="element blue">41<br>Nb</div>
+            <div class="element blue">42<br>Mo</div>
+            <div class="element blue">43<br>Tc</div>
+            <div class="element blue">44<br>Ru</div>
+            <div class="element blue">45<br>Rh</div>
+            <div class="element blue">46<br>Pd</div>
+            <div class="element blue">47<br>Ag</div>
+            <div class="element blue">48<br>Cd</div>
+            <div class="element yellow">49<br>In</div>
+            <div class="element yellow">50<br>Sn</div>
+            <div class="element yellow">51<br>Sb</div>
+            <div class="element yellow">52<br>Te</div>
+            <div class="element yellow">53<br>I</div>
+            <div class="element yellow">54<br>Xe</div>
+
+            <div class="element red">55<br>Cs</div>
+            <div class="element red">56<br>Ba</div>
+            <div class="element blue">57-71</div>
+            <div class="element blue">72<br>Hf</div>
+            <div class="element blue">73<br>Ta</div>
+            <div class="element blue">74<br>W</div>
+            <div class="element blue">75<br>Re</div>
+            <div class="element blue">76<br>Os</div>
+            <div class="element blue">77<br>Ir</div>
+            <div class="element blue">78<br>Pt</div>
+            <div class="element blue">79<br>Au</div>
+            <div class="element blue">80<br>Hg</div>
+            <div class="element yellow">81<br>Tl</div>
+            <div class="element yellow">82<br>Pb</div>
+            <div class="element yellow">83<br>Bi</div>
+            <div class="element yellow">84<br>Po</div>
+            <div class="element yellow">85<br>At</div>
+            <div class="element yellow">86<br>Rn</div>
+
+            <div class="element red">87<br>Fr</div>
+            <div class="element red">88<br>Ra</div>
+            <div class="element blue">89-103</div>
+            <div class="element blue">104<br>Rf</div>
+            <div class="element blue">105<br>Db</div>
+            <div class="element blue">106<br>Sg</div>
+            <div class="element blue">107<br>Bh</div>
+            <div class="element blue">108<br>Hs</div>
+            <div class="element blue">109<br>Mt</div>
+            <div class="element blue">110<br>Ds</div>
+            <div class="element blue">111<br>Rg</div>
+            <div class="element blue">112<br>Cn</div>
+            <div class="element yellow">113<br>Nh</div>
+            <div class="element yellow">114<br>Fl</div>
+            <div class="element yellow">115<br>Mc</div>
+            <div class="element yellow">116<br>Lv</div>
+            <div class="element yellow">117<br>Ts</div>
+            <div class="element yellow">118<br>Og</div>
+        </div>
+
+        <div class="lanthanides">
+            <div class="element green">57<br>La</div>
+            <div class="element green">58<br>Ce</div>
+            <div class="element green">59<br>Pr</div>
+            <div class="element green">60<br>Nd</div>
+            <div class="element green">61<br>Pm</div>
+            <div class="element green">62<br>Sm</div>
+            <div class="element green">63<br>Eu</div>
+            <div class="element green">64<br>Gd</div>
+            <div class="element green">65<br>Tb</div>
+            <div class="element green">66<br>Dy</div>
+            <div class="element green">67<br>Ho</div>
+            <div class="element green">68<br>Er</div>
+            <div class="element green">69<br>Tm</div>
+            <div class="element green">70<br>Yb</div>
+            <div class="element green">71<br>Lu</div>
+        </div>
+
+        <div class="actinides">
+            <div class="element green">89<br>Ac</div>
+            <div class="element green">90<br>Th</div>
+            <div class="element green">91<br>Pa</div>
+            <div class="element green">92<br>U</div>
+            <div class="element green">93<br>Np</div>
+            <div class="element green">94<br>Pu</div>
+            <div class="element green">95<br>Am</div>
+            <div class="element green">96<br>Cm</div>
+            <div class="element green">97<br>Bk</div>
+            <div class="element green">98<br>Cf</div>
+            <div class="element green">99<br>Es</div>
+            <div class="element green">100<br>Fm</div>
+            <div class="element green">101<br>Md</div>
+            <div class="element green">102<br>No</div>
+            <div class="element green">103<br>Lr</div>
+        </div>
+    </div>
+</body>
+
+</html>

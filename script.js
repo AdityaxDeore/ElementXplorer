@@ -2,12 +2,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const elements = document.querySelectorAll('.element');
   const infoBox = document.createElement('div');
   infoBox.style.position = 'absolute';
-  infoBox.style.backgroundColor = 'rgba(255, 255, 255, 0.8)'; // 80% transparency
+  infoBox.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
   infoBox.style.color = '#000';
   infoBox.style.padding = '10px';
   infoBox.style.border = '1px solid #000';
   infoBox.style.display = 'none';
-  infoBox.style.zIndex = '1000'; // Ensure the info box is on top
+  infoBox.style.zIndex = '1000';
   document.body.appendChild(infoBox);
 
   elements.forEach(element => {
@@ -20,11 +20,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     element.addEventListener('mouseover', () => {
-      element.style.zIndex = '999'; // Ensure the element is on top when hovered
+      element.style.zIndex = '999';
     });
 
     element.addEventListener('mouseout', () => {
-      element.style.zIndex = '1'; // Reset the z-index when not hovered
+      element.style.zIndex = '1';
     });
   });
 
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
       '19\nK': 'Potassium<br>Atomic Number: 19<br>Symbol: K<br>Atomic Mass: 39.098',
       '20\nCa': 'Calcium<br>Atomic Number: 20<br>Symbol: Ca<br>Atomic Mass: 40.078',
       '21\nSc': 'Scandium<br>Atomic Number: 21<br>Symbol: Sc<br>Atomic Mass: 44.956',
-      '22\nTi': 'Titanium<br>Atomic Number: 22<br>Symbol: Ti<br>Atomic Mass: 47.867',
+      '22 \nTi': 'Titanium<br>Atomic Number: 22<br>Symbol: Ti<br>Atomic Mass: 47.867',
       '23\nV': 'Vanadium<br>Atomic Number: 23<br>Symbol: V<br>Atomic Mass: 50.942',
       '24\nCr': 'Chromium<br>Atomic Number: 24<br>Symbol: Cr<br>Atomic Mass: 51.996',
       '25\nMn': 'Manganese<br>Atomic Number: 25<br>Symbol: Mn<br>Atomic Mass: 54.938',
@@ -90,11 +90,24 @@ document.addEventListener('DOMContentLoaded', () => {
       '52\nTe': 'Tellurium<br>Atomic Number: 52<br>Symbol: Te<br>Atomic Mass: 127.60',
       '53\nI': 'Iodine<br>Atomic Number: 53<br>Symbol: I<br>Atomic Mass: 126.90',
       '54\nXe': 'Xenon<br>Atomic Number: 54<br>Symbol: Xe<br>Atomic Mass: 131.29',
-      '55\nCs': 'Cesium<br>Atomic Number: 55<br>Symbol: Cs<br>Atomic Mass: 132.91',
-      '56\nBa': 'Barium<br>Atomic Number: 56<br>Symbol: Ba<br>Atomic Mass: 137.33',
-      '57-71': 'Lanthanides<br>Atomic Numbers: 57-71',
-      '72\nHf': 'Hafnium<br>Atomic Number: 72<br>Symbol: Hf<br>Atomic Mass: 178.49',
-      '73\nTa': 'Tantalum<br>Atomic Number: 73<br>Symbol: Ta<br>Atomic Mass: 180.95',
+      "55\nCs": "Cesium<br>Atomic Number: 55<br>Symbol: Cs<br>Atomic Mass: 132.91",
+      "56\nBa": "Barium<br>Atomic Number: 56<br>Symbol: Ba<br>Atomic Mass: 137.33",
+      "57\nLa": "Lanthanum<br>Atomic Number: 57<br>Symbol: La<br>Atomic Mass: 138.91",
+      "58\nCe": "Cerium<br>Atomic Number: 58<br>Symbol: Ce<br>Atomic Mass: 140.12",
+      "59\nPr": "Praseodymium<br>Atomic Number: 59<br>Symbol: Pr<br>Atomic Mass: 140.91",
+      "60\nNd": "Neodymium<br>Atomic Number: 60<br>Symbol: Nd<br>Atomic Mass: 144.24",
+      "61\nPm": "Promethium<br>Atomic Number: 61<br>Symbol: Pm<br>Atomic Mass: 145",
+      "62\nSm": "Samarium<br>Atomic Number: 62<br>Symbol: Sm<br>Atomic Mass: 150.36",
+      "63\nEu": "Europium<br>Atomic Number: 63<br>Symbol: Eu<br>Atomic Mass: 151.96",
+      "64\nGd": "Gadolinium<br>Atomic Number: 64<br>Symbol: Gd<br>Atomic Mass: 157.25",
+      "65\nTb": "Terbium<br>Atomic Number: 65<br>Symbol: Tb<br>Atomic Mass: 158.93",
+      "66\nDy": "Dysprosium<br>Atomic Number: 66<br>Symbol: Dy<br>Atomic Mass: 162.50",
+      "67\nHo": "Holmium<br>Atomic Number: 67<br>Symbol: Ho<br>Atomic Mass: 164.93",
+      "68\nEr": "Erbium<br>Atomic Number: 68<br>Symbol: Er<br>Atomic Mass: 167.26",
+      "69\nTm": "Thulium<br>Atomic Number: 69<br>Symbol: Tm<br>Atomic Mass: 168.93",
+      "70\nYb": "Ytterbium<br>Atomic Number: 70<br>Symbol: Yb<br>Atomic Mass: 173.04",
+      "71\nLu": "Lutetium<br>Atomic Number: 71<br>Symbol: Lu<br>Atomic Mass: 174.97",
+      "72\nHf": "Hafnium<br>Atomic Number: 72<br>Symbol: Hf<br>Atomic Mass: 178.49",
       '74\nW': 'Tungsten<br>Atomic Number: 74<br>Symbol: W<br>Atomic Mass: 183.84',
       '75\nRe': 'Rhenium<br>Atomic Number: 75<br>Symbol: Re<br>Atomic Mass: 186.21',
       '76\nOs': 'Osmium<br>Atomic Number: 76<br>Symbol: Os<br>Atomic Mass: 190.23',
@@ -109,10 +122,24 @@ document.addEventListener('DOMContentLoaded', () => {
       '85\nAt': 'Astatine<br>Atomic Number: 85<br>Symbol: At<br>Atomic Mass: 210',
       '86\nRn': 'Radon<br>Atomic Number: 86<br>Symbol: Rn<br>Atomic Mass: 222',
       '87\nFr': 'Francium<br>Atomic Number: 87<br>Symbol: Fr<br>Atomic Mass: 223',
-      '88\nRa': 'Radium<br>Atomic Number: 88<br>Symbol: Ra<br>Atomic Mass: 226',
-      '89-103': 'Actinides<br>Atomic Numbers: 89-103',
-      '104\nRf': 'Rutherfordium<br>Atomic Number: 104<br>Symbol: Rf<br>Atomic Mass: 267',
-      '105\nDb': 'Dubnium<br>Atomic Number: 105<br>Symbol: Db<br>Atomic Mass: 270',
+      "88\nRa": "Radium<br>Atomic Number: 88<br>Symbol: Ra<br>Atomic Mass: 226",
+      "89\nAc": "Actinium<br>Atomic Number: 89<br>Symbol: Ac<br>Atomic Mass: 227",
+      "90\nTh": "Thorium<br>Atomic Number: 90<br>Symbol: Th<br>Atomic Mass: 232.04",
+      "91\nPa": "Protactinium<br>Atomic Number: 91<br>Symbol: Pa<br>Atomic Mass: 231.04",
+      "92\nU": "Uranium<br>Atomic Number: 92<br>Symbol: U<br>Atomic Mass: 238.03",
+      "93\nNp": "Neptunium<br>Atomic Number: 93<br>Symbol: Np<br>Atomic Mass: 237",
+      "94\nPu": "Plutonium<br>Atomic Number: 94<br>Symbol: Pu<br>Atomic Mass: 244",
+      "95\nAm": "Americium<br>Atomic Number: 95<br>Symbol: Am<br>Atomic Mass: 243",
+      "96\nCm": "Curium<br>Atomic Number: 96<br>Symbol: Cm<br>Atomic Mass: 247",
+      "97\nBk": "Berkelium<br>Atomic Number: 97<br>Symbol: Bk<br>Atomic Mass: 247",
+      "98\nCf": "Californium<br>Atomic Number: 98<br>Symbol: Cf<br>Atomic Mass: 251",
+      "99\nEs": "Einsteinium<br>Atomic Number: 99<br>Symbol: Es<br>Atomic Mass: 252",
+      "100\nFm": "Fermium<br>Atomic Number: 100<br>Symbol: Fm<br>Atomic Mass: 257",
+      "101\nMd": "Mendelevium<br>Atomic Number: 101<br>Symbol: Md<br>Atomic Mass: 258",
+      "102\nNo": "Nobelium<br>Atomic Number: 102<br>Symbol: No<br>Atomic Mass: 259",
+      "103\nLr": "Lawrencium<br>Atomic Number: 103<br>Symbol: Lr<br>Atomic Mass: 262",
+      "104\nRf": "Rutherfordium<br>Atomic Number: 104<br>Symbol: Rf<br>Atomic Mass: 267",
+      "105\nDb": "Dubnium<br>Atomic Number: 105<br>Symbol: Db<br>Atomic Mass: 270",
       '106\nSg': 'Seaborgium<br>Atomic Number: 106<br>Symbol: Sg<br>Atomic Mass: 271',
       '107\nBh': 'Bohrium<br>Atomic Number: 107<br>Symbol: Bh<br>Atomic Mass: 270',
       '108\nHs': 'Hassium<br>Atomic Number: 108<br>Symbol: Hs<br>Atomic Mass: 277',
